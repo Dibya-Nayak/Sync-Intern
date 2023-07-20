@@ -1,7 +1,6 @@
 import random
 import smtplib
 
-# Generating a random 6 digit number as OTP
 
 OTP = random.randint(100000, 999999)
 
@@ -38,9 +37,8 @@ def email_verification(receiver_email):
 
 valid_receiver_email = email_verification(receiver_email)  # checking if the email is valid or not
 
-password = "aezjmddcdaduvmjt"  # password to get into the sender's gmail account
-server.login("djnayak001@gmail.com", password)  # logging into the sender's gmail account
-
+password = "aezjmddcdaduvmjt"  
+server.login("djnayak001@gmail.com", password)  
 body = "Dear " + name + "," + "\n" + "\n" + "Your One Time Password (OTP) is " + str(OTP) + "."  # generating a message
 subject = "One Time Password (OTP) for verification"
 message = f'Subject:{subject}\n\n{body}'
